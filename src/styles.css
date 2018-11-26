@@ -232,6 +232,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1e4ea', end
 
 	top:-35%;
 	z-index:10;
+}
+.car.running {
 -moz-animation:myfirst 10s  linear infinite;
 -webkit-animation:myfirst 10s  linear infinite;
 }
@@ -254,7 +256,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1e4ea', end
 	z-index:2;
 	left:9px;
 	top:20px;
--moz-animation:tyre-rotate 1s infinite linear;
+
+}
+.tyre.running {
+  -moz-animation:tyre-rotate 1s infinite linear;
   -webkit-animation:tyre-rotate 1s infinite linear;
 }
 @-moz-keyframes tyre-rotate {

@@ -1,13 +1,22 @@
 <div class="country-wrap">
-
-	<!--<div class="mountain-1"></div>
-	<div class="mountain-2"></div>-->
-
+  <div>
+    Gas
+    <input type="text"  [value]="gas" (input)="gas = $event.target.value" />
+    Oil
+    <input type="text"  [value]="oil" (input)="oil = $event.target.value" />
+    Cooling Liquid
+    <input type="text"  [value]="coolingLiquid" (input)="coolingLiquid = $event.target.value" />
+  </div>
+  <div>
+    <button (click)="isKeyIn = true" >Put The Key In!</button>
+    <button (click)="ignite()"  [disabled]="isKeyIn === false" >Ignite!</button>
+    <button (click)="start()" [disabled]="!isKeyIn || !ignited" >Move The Car!</button>
+    <button (click)="stop()" [disabled]="!isKeyIn || !ignited">Stop The Car!</button>
+  </div>
 	<div class="sun"></div>
 	<div class="grass"></div>
 	<div class="street">
-		<div class="car">
-		<!--<div class="car-base"></div>-->
+		<div class="car" [ngClass]="{'running' : isRunning}" >
 		<div class="car-body">
 			<div class="car-top-back">
 				<div class="back-curve"></div>
@@ -30,10 +39,10 @@
 
 		</div>
 		<div class="front-bumper"></div>
-		<div class="tyre">
+		<div class="tyre" [ngClass]="{'running' : isRunning}">
 			<div class="gap"></div>
 		</div>
-		<div class="tyre front">
+		<div class="tyre front" [ngClass]="{'running' : isRunning}">
 			<div class="gap"></div>
 		</div>
 		<div class="car-shadow"></div>
@@ -41,15 +50,6 @@
 	</div>
 	<div class="street-stripe"></div>
 	<div class="hill">
-		<!--<div class="tree-1">
-			<div class="branch-1"></div>
-			<div class="branch-2"></div>
-			<div class="branch-3"></div>
-		</div>
-		<div class="tree-1">
-		<div class="branch"></div>
-		<div class="trunk"></div>
-	</div>-->
 	</div>
 
 </div>
